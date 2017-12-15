@@ -22,7 +22,7 @@ This is a custom jQuery plug-in
 
 使用方法：
 
- 使用前确认已经引入jQuery库文件，在引入pagination.js文件
+ 使用前确认已经引入jQuery库文件，再引入pagination.js文件
  
  引入页码样式 
  
