@@ -83,7 +83,7 @@ This is a custom jQuery plug-in
  例如：
  $("分页器容器").pagination({
  
-   currentPage : 1，
+    currentPage : 1，
    
     pageCount : 10,
    
