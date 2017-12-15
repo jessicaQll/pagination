@@ -81,6 +81,7 @@ This is a custom jQuery plug-in
  disableClassName：首尾页时上一页下一页禁止点击样式类，可选，默认为样式中的clickDisable
  
  例如：
+ 
  $("分页器容器").pagination({
  
     currentPage : 1，
