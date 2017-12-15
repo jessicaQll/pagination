@@ -5,7 +5,6 @@
             currentPage : 1,//当前页
             pageCount : 10,// 总页码
             disableClassName : "disableClassName"//首尾页时上一页下一页禁止点击样式类
-
         };
 
         var opts = $.extend(defaults, options);
