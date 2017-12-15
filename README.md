@@ -72,14 +72,21 @@ This is a custom jQuery plug-in
 
  调用方法：
  
+ 参数说明：
+ 
+ currentPage：当前页，可选，默认为1
+ 
+ pageCount: 总页码，可选，默认为10，
+ 
+ disableClassName：首尾页时上一页下一页禁止点击样式类，可选，默认为样式中的clickDisable
+ 
+ 例如：
  $("分页器容器").pagination({
  
-   currentPage : 当前页,//当前页
+   currentPage : 1，
+   
+   pageCount : 10,
    
-   pageCount : 总页码,// 总页码
-   
-   conClassName : "分页器容器",//分页器容器
-   
-   disableClassName : "clickDisable"//首尾页时上一页下一页禁止点击样式类
+   disableClassName : "clickDisable"
    
  });
