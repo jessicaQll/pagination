@@ -46,7 +46,15 @@ This is a custom jQuery plug-in
      
      text-align: center;
      
-     display: inline-block; }
+     display: inline-block;
+     
+     -webkit-user-select: none;
+     
+     -moz-user-select: none;
+     
+     -ms-user-select: none;
+     
+     user-select: none; }
      
  .page-active {
  
