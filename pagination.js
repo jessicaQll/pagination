@@ -4,13 +4,12 @@
         var defaults = {
             currentPage : 1,//当前页
             pageCount : 10,// 总页码
-            conClassName : "conClassName",//分页器容器
             disableClassName : "disableClassName"//首尾页时上一页下一页禁止点击样式类
 
         };
 
         var opts = $.extend(defaults, options);
-        var $pageContainer = $("." + opts.conClassName);
+        var $pageContainer = this；
 
         //动态生成页码
         function createPageEle(currentPage, pageCount, disableClassName){
@@ -73,7 +72,6 @@
             }else{
                 lisHtml += '<div class="page next">下一页</div>';
             }
-            console.log(lisHtml);
             $pageContainer.append(lisHtml);
         };
 
