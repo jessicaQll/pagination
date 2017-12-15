@@ -44,6 +44,8 @@ This is a custom jQuery plug-in
      
      font-size: 14px;
      
+     text-align: center;
+     
      display: inline-block; }
      
  .page-active {
