@@ -26,7 +26,7 @@ This is a custom jQuery plug-in
  引入页码样式 
  
  .page {
- 
+  
      border: 1px solid #969696;
      
      box-sizing: border-box;
@@ -85,8 +85,8 @@ This is a custom jQuery plug-in
  
    currentPage : 1，
    
-   pageCount : 10,
+    pageCount : 10,
    
-   disableClassName : "clickDisable"
+    disableClassName : "clickDisable"
    
  });
