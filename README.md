@@ -104,10 +104,11 @@ This is a custom jQuery plug-in
     disableClassName : "clickDisable"，
   
     clickCallback: testConsole
+    
  });
  
  function testConsole(page){
  
-   console.log(page);
+    console.log(page);
  
  }
