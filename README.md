@@ -91,7 +91,7 @@ This is a custom jQuery plug-in
  
  disableClassName：首尾页时上一页下一页禁止点击样式类，可选，默认为样式中的clickDisable
  
- clickCallback: function(){}//点击回调函数,参数为带显示页码
+ clickCallback: function(){}//点击回调函数
  
  例如：
  
@@ -107,7 +107,7 @@ This is a custom jQuery plug-in
     
  });
  
- function testConsole(page){
+ function testConsole(page){//参数为带显示页码
  
     console.log(page);
  
