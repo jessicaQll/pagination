@@ -100,9 +100,9 @@ This is a custom jQuery plug-in
     currentPage : 1，
    
     pageCount : 10,
-   
-    disableClassName : "clickDisable",
     
+    disableClassName : "clickDisable"，
+    
     clickCallback: testConsole
     
  });
