@@ -76,7 +76,7 @@ This is a custom jQuery plug-in
  
      width: 50px; }
      
- .clickDisable {
+ .click-disable {
  
      background-color: #efefef; }
      
@@ -91,6 +91,8 @@ This is a custom jQuery plug-in
  
  disableClassName：首尾页时上一页下一页禁止点击样式类，可选，默认为样式中的clickDisable
  
+ clickCallback: function(){}//点击回调函数,参数为带显示页码
+ 
  例如：
  
  $("分页器容器").pagination({
@@ -99,6 +101,13 @@ This is a custom jQuery plug-in
    
     pageCount : 10,
    
-    disableClassName : "clickDisable"
-   
+    disableClassName : "clickDisable"，
+  
+    clickCallback: testConsole
  });
+ 
+ function testConsole(page){
+ 
+   console.log(page);
+ 
+ }
