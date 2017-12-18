@@ -101,8 +101,8 @@ This is a custom jQuery plug-in
    
     pageCount : 10,
     
-    disableClassName : "clickDisable"，
-    
+    disableClassName : "clickDisable",
+    
     clickCallback: testConsole
     
  });
