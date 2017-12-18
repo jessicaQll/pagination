@@ -3,20 +3,20 @@
 
         var defaults = {
             currentPage : 1,//当前页
-            pageCount : 10,// 总页码
-            disableClassName : "disableClassName"//首尾页时上一页下一页禁止点击样式类
+            pageCount : null,// 总页码
+            disableClassName : "disableClassName",//首尾页时上一页下一页禁止点击样式类
+            clickCallback: function(){}//点击回调函数
         };
 
-        var opts = $.extend(defaults, options);
-        var $pageContainer = this；
-
+        var opts = $.extend(defaults, options || {});
+        var $pageContainer = this;
         //动态生成页码
         function createPageEle(currentPage, pageCount, disableClassName){
-            var lisHtml = '<div class="page prev">上一页</div>';
+            var lisHtml = '<div class="pagination-box"><div class="page prev">上一页</div>';
             var i;
 
             if(1 == currentPage){//当前为首页，上一页不可点击
-                lisHtml = '<div class="page prev '+ disableClassName + '">上一页</div>';
+                lisHtml = '<div class="pagination-box"><div class="page prev '+ disableClassName + '">上一页</div>';
             }
             if(1 == pageCount){//只有一页时隐藏分页器
                 $pageContainer.css("display","none");
@@ -67,36 +67,37 @@
                 }
             }
             if(pageCount == currentPage){
-                lisHtml += '<div class="page next ' + disableClassName + '">下一页</div>';
+                lisHtml += '<div class="page next ' + disableClassName + '">下一页</div></div>';
             }else{
-                lisHtml += '<div class="page next">下一页</div>';
+                lisHtml += '<div class="page next">下一页</div></div>';
             }
             $pageContainer.append(lisHtml);
         };
 
         //页码点击事件
         $pageContainer.on("click",".page",function(e){
+            jQuery.support.cors=true;
             var $tar = $(e.target);
             var clickPage = $tar.html();
             var showPage = $tar.siblings(".page-active").html();
             if(showPage == clickPage){//点击当前页无效
                 return;
             }
-            if($tar.hasClass("clickDisable")){//当前页为首页时点击上一页无效，当前页为尾页时点击下一页无效
+            if($tar.hasClass(opts.disableClassName)){//当前页为首页时点击上一页无效，当前页为尾页时点击下一页无效
                 return;
             }
             if("上一页" == clickPage){
                 $pageContainer.empty();
-                createPageEle(showPage-1, opts.pageCount, "clickDisable" );
+                createPageEle(showPage-1, opts.pageCount, opts.disableClassName );
+                opts.clickCallback(showPage-1);
             }else if("下一页" == clickPage){
-                if(opts.pageCount == showPage){
-                    return;
-                }
                 $pageContainer.empty();
-                createPageEle( parseInt(showPage)+1, opts.pageCount, "clickDisable" );
+                createPageEle( parseInt(showPage)+1, opts.pageCount, opts.disableClassName );
+                opts.clickCallback(parseInt(showPage)+1);
             }else{
                 $pageContainer.empty();
-               createPageEle( parseInt(clickPage), opts.pageCount, "clickDisable" );
+                createPageEle( parseInt(clickPage), opts.pageCount, opts.disableClassName );
+                opts.clickCallback(parseInt(clickPage));
             }
         });
 
