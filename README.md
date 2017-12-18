@@ -87,7 +87,7 @@ This is a custom jQuery plug-in
  
  currentPage：当前页，可选，默认为1
  
- pageCount: 总页码，可选，默认为10，
+ pageCount: 总页码，必须，否则无页码
  
  disableClassName：首尾页时上一页下一页禁止点击样式类，可选，默认为样式中的clickDisable
  
@@ -101,9 +101,9 @@ This is a custom jQuery plug-in
    
     pageCount : 10,
    
-    disableClassName : "clickDisable"，
-  
-    clickCallback: testConsole
+    disableClassName : "clickDisable",
+    
+    clickCallback: testConsole
     
  });
  
