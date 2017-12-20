@@ -18,7 +18,7 @@
             if(1 == currentPage){//当前为首页，上一页不可点击
                 lisHtml = '<div class="pagination-box"><div class="page prev '+ disableClassName + '">上一页</div>';
             }
-            if(1 == pageCount){//只有一页时隐藏分页器
+            if(1 == pageCount || 0 == pageCount){//只有一页或无数据时隐藏分页器
                 $pageContainer.css("display","none");
             }else if(pageCount <= 10){//总页数小于等于10时，页码全部显示
                 for(i = 1; i <= pageCount; i++){
