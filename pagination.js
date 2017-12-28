@@ -21,6 +21,7 @@
             if(1 == pageCount || 0 == pageCount){//只有一页或无数据时隐藏分页器
                 $pageContainer.css("display","none");
             }else if(pageCount <= 10){//总页数小于等于10时，页码全部显示
+                $pageContainer.css("display","block");
                 for(i = 1; i <= pageCount; i++){
                     if( i == currentPage ){
                         lisHtml += '<div class="page page-active">' + i + '</div>';
@@ -29,6 +30,7 @@
                     }
                 }
             }else{//总页数大于10时，页码显示样式
+                $pageContainer.css("display","block");
                 if(5 > currentPage){//当前页码小于5时，显示前5个页码
                     for(i = 1; i <= 5; i++){
                         if( i == currentPage ){
@@ -80,7 +82,7 @@
             var $tar = $(e.target);
             var clickPage = $tar.html();
             var showPage = $tar.siblings(".page-active").html();
-            if(showPage == clickPage){//点击当前页无效
+            if($tar.hasClass("page-active")){//点击当前页无效
                 return;
             }
             if($tar.hasClass(opts.disableClassName)){//当前页为首页时点击上一页无效，当前页为尾页时点击下一页无效
