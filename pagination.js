@@ -77,7 +77,7 @@
         };
 
         //页码点击事件
-        $pageContainer.on("click",".page",function(e){
+        $pageContainer.empty().one("click",".page",function(e){
             jQuery.support.cors=true;
             var $tar = $(e.target);
             var clickPage = $tar.html();
